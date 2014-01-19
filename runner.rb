@@ -1,37 +1,50 @@
 require_relative 'contact'
 require_relative 'rolodex'
+require_relative 'cra'
 
-rolodex = Rolodex.new
+new_cra = CRA.new
+new_cra.main_menu
 
-sepand = {
-	:firstname => "sep",
-	:lastname => "Bar",
-	:email => "sep@skyprep.com",
-	#:company => "skyprep"
-}
 
-arash = {
-	:firstname => "arash",
-	:lastname => "barkhodaee",
-	:email => "ara@skyprep.com",
-	:company => "skyprep"
-}
 
-sepand = Contact.new(sepand)
-arash = Contact.new (arash)
+##TESTING CODE/ HISTORY ETC. BELOW##
 
-babak = Contact.new({:firstname => "Babak", :lastname => "Baraka"})
-rolodex.add_contact(sepand)
-rolodex.add_contact(arash)
-rolodex.add_contact(babak)
 
-rolodex.display_all_contacts
 
-rolodex.add_contact({:firstname => "mahmoud", :lastname => "barkodz"})
+# require_relative 'contact'
+# require_relative 'rolodex'
 
-puts ""
+# rolodex = Rolodex.new
 
-rolodex.display_all_contacts
+# sepand = {
+# 	:firstname => "sep",
+# 	:lastname => "Bar",
+# 	:email => "sep@skyprep.com",
+# 	#:company => "skyprep"
+# }
+
+# arash = {
+# 	:firstname => "arash",
+# 	:lastname => "barkhodaee",
+# 	:email => "ara@skyprep.com",
+# 	:company => "skyprep"
+# }
+
+# sepand = Contact.new(sepand)
+# arash = Contact.new (arash)
+
+# babak = Contact.new({:firstname => "Babak", :lastname => "Baraka"})
+# rolodex.add_contact(sepand)
+# rolodex.add_contact(arash)
+# rolodex.add_contact(babak)
+
+# rolodex.display_all_contacts
+
+# rolodex.add_contact({:firstname => "mahmoud", :lastname => "barkodz"})
+
+# puts ""
+
+# rolodex.display_all_contacts
 
 
 # babak = Contact.new("babak", "cattaka", "babk@skyprep.com", "zuuts")

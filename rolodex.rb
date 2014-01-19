@@ -67,6 +67,7 @@ class Rolodex
 		@contacts.each do |contact|
 			return contact if contact.id == id
 		end
+		return nil
 	end
 
 	def get_info_by_attribute(attribute)

@@ -51,11 +51,35 @@ class Rolodex
 		end
 	end
 
-	def display_info_by_attribute
+	def display_info_by_attribute(attribute)
+
+		attribute_array = []
+
+		@contacts.each do |contact|
+			if attribute == "firstname"
+				 attribute_array.push(contact.firstname)
+			end
+			if attribute == "lastname"
+				 attribute_array.push(contact.lastname)
+			end
+			if attribute == "email"
+				 attribute_array.push(contact.email)
+			end
+			if attribute == "company"
+				 attribute_array.push(contact.company)
+			end
+		end
+		return attribute_array
 	end
 
 	def delete_contact(contact)
 		@contacts.delete(contact)
 	end
+
+	def delete_contact_by_id(id)
+		contact_to_delete = find_contact_by_id(id)
+		delete_contact(contact_to_delete)
+	end
+
 
 end

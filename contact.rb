@@ -23,10 +23,10 @@ class Contact
 	end
 
 	def show
-		puts "first name: #{@firstname}"
-		puts "last name: #{@lastname}"
-		puts "email: #{@email}"
-		puts "company: #{@company}"
+		puts "first name: #{firstname}"
+		puts "last name: #{lastname}"
+		puts "email: #{email}"
+		puts "company: #{company}"
 
 	end
 
@@ -38,6 +38,10 @@ class Contact
 			:email => email,
 			:company => company
 		}
+	end
+
+	def clone
+		Contact.new(convert_to_hash)
 	end
 
 end

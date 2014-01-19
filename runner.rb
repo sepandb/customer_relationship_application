@@ -21,12 +21,17 @@ sepand = Contact.new(sepand)
 arash = Contact.new (arash)
 
 babak = Contact.new({:firstname => "Babak", :lastname => "Baraka"})
-rolodex.add(sepand)
-rolodex.add(arash)
-rolodex.add(babak)
+rolodex.add_contact(sepand)
+rolodex.add_contact(arash)
+rolodex.add_contact(babak)
 
-puts rolodex.display_info_by_attribute("company")
+rolodex.display_all_contacts
 
+rolodex.add_contact({:firstname => "mahmoud", :lastname => "barkodz"})
+
+puts ""
+
+rolodex.display_all_contacts
 
 
 # babak = Contact.new("babak", "cattaka", "babk@skyprep.com", "zuuts")

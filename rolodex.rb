@@ -7,10 +7,25 @@ class Rolodex
 		@contacts = Array.new
 	end
 
-	def add(c)
-		c.id = @id
-		@contacts.push(c)
-		@id = @id + 1
+	def add_contact(c)
+
+		 	c = Contact.new(c) if c.class == Hash
+		 	c.id = @id
+		 	@contacts.push(c)
+		 	@id += 1
+
+
+		# if c.class == Contact
+		# 	c.id = @id
+		# 	@contacts.push(c)
+		# 	@id = @id + 1
+		# else
+		# 	new_contact = Contact.new(c)
+		# 	new_contact.id = @id
+		# 	@contacts.push(new_contact)
+		# 	@id = @id + 1
+
+		# end
 
 	end
 
@@ -42,7 +57,10 @@ class Rolodex
 	end
 
 	def display_all_contacts
-		@contacts
+		@contacts.each do |contact|
+			puts "id: #{contact.id}"
+			contact.show
+		end
 	end
 
 	def find_contact_by_id(id)
@@ -51,7 +69,7 @@ class Rolodex
 		end
 	end
 
-	def display_info_by_attribute(attribute)
+	def get_info_by_attribute(attribute)
 
 		attribute_array = []
 

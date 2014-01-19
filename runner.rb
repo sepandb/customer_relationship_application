@@ -3,18 +3,31 @@ require_relative 'rolodex'
 
 rolodex = Rolodex.new
 
-contact_hash = {
-	:firstname => "Sep",
+sepand = {
+	:firstname => "sep",
 	:lastname => "Bar",
 	:email => "sep@skyprep.com",
 	#:company => "skyprep"
 }
 
-sepand = Contact.new(contact_hash)
+arash = {
+	:firstname => "arash",
+	:lastname => "barkhodaee",
+	:email => "ara@skyprep.com",
+	:company => "skyprep"
+}
 
+sepand = Contact.new(sepand)
+arash = Contact.new (arash)
+
+babak = Contact.new({:firstname => "Babak", :lastname => "Baraka"})
 rolodex.add(sepand)
+rolodex.add(arash)
+rolodex.add(babak)
 
-puts rolodex.display_info_by_attribute("email")
+puts rolodex.display_info_by_attribute("company")
+
+
 
 # babak = Contact.new("babak", "cattaka", "babk@skyprep.com", "zuuts")
 # sepand = Contact.new("sepand", "barkhodaee", "sepand@gmail.com", "skyprep")

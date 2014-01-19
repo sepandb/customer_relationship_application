@@ -10,6 +10,18 @@ class Contact
 
 	end
 
+	def firstname
+		@firstname.capitalize if @firstname
+	end
+
+	def lastname
+		@lastname.capitalize if @lastname
+	end
+
+	def company
+		@company.capitalize if @company
+	end
+
 	def show
 		puts "first name: #{@firstname}"
 		puts "last name: #{@lastname}"
@@ -17,4 +29,15 @@ class Contact
 		puts "company: #{@company}"
 
 	end
+
+	def convert_to_hash
+
+		contact_hash = {
+			:firstname => firstname,
+			:lastname => lastname,
+			:email => email,
+			:company => company
+		}
+	end
+
 end

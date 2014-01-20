@@ -7,6 +7,7 @@ new_cra.main_menu
 
 
 
+
 ##TESTING CODE/ HISTORY ETC. BELOW##
 
 
@@ -18,9 +19,9 @@ new_cra.main_menu
 
 # sepand = {
 # 	:firstname => "sep",
-# 	:lastname => "Bar",
+# 	:lastname => "Barkhodaee",
 # 	:email => "sep@skyprep.com",
-# 	#:company => "skyprep"
+# 	:company => "skyprep"
 # }
 
 # arash = {
@@ -33,13 +34,12 @@ new_cra.main_menu
 # sepand = Contact.new(sepand)
 # arash = Contact.new (arash)
 
-# babak = Contact.new({:firstname => "Babak", :lastname => "Baraka"})
+# # babak = Contact.new({:firstname => "Babak", :lastname => "Baraka"})
 # rolodex.add_contact(sepand)
 # rolodex.add_contact(arash)
-# rolodex.add_contact(babak)
+# # rolodex.add_contact(babak)
 
-# rolodex.display_all_contacts
-
+# rolodex.export_to_csv
 # rolodex.add_contact({:firstname => "mahmoud", :lastname => "barkodz"})
 
 # puts ""

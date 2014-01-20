@@ -1,5 +1,5 @@
 require_relative 'contact'
-
+require 'csv'
 class Rolodex
 	attr_accessor :contacts
 	def initialize
@@ -100,5 +100,25 @@ class Rolodex
 		delete_contact(contact_to_delete)
 	end
 
+	def export_to_csv
+		CSV.open("./export.csv", 'wb') do |csv|
+		#csv << ["id", "first name", "last name", "email", "company"]
+		@contacts.each do |contact|
+			csv << [contact.id, contact.firstname, contact.lastname, contact.email, contact.company]
+			end
+		end
+	end
+
+	def import_from_csv
+		CSV.foreach("./export.csv") do |row|
+			new_contact =
+			{:firstname => row[1],
+				:lastname => row[2],
+				:email => row[3],
+				:company => row[4]
+			}
+			add_contact(new_contact)
+		end
+	end
 
 end

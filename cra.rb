@@ -18,7 +18,9 @@ class CRA
 			puts "4 Display a Particular Contact"
 			puts "5 Display Attribute"
 			puts "6 Delete Contact"
-			puts "7 Exit"
+			puts "7 Export to CSV"
+			puts "8 Import from CSV"
+			puts "9 Exit"
 			puts ""
 			main_menu_input = gets.chomp.to_i
 			case main_menu_input
@@ -35,6 +37,10 @@ class CRA
 			when 6
 				delete
 			when 7
+				export
+			when 8
+				import
+			when 9
 				run = false
 			end
 		end
@@ -144,4 +150,24 @@ class CRA
 		@rolodex.delete_contact_by_id(id)
 		puts "Contact deleted"
 	end
+
+	def export
+		@rolodex.export_to_csv
+		puts "Your contacts have been exported to a CSV file!"
+	end
+
+	def import
+		@rolodex.import_from_csv
+		puts "Your contacts have been imported from the CSV"
+	end
+
+
+	# def delete_multiple
+	# 	puts "Enter the IDs of the contacts you want to delete, separated by a comma"
+	# 	ids = gets.chomp.split(',')
+	# 	ids.each do |id|
+	# 		@rolodex.delete_contact_by_id(id.to_i)
+	# 	end
+	# end
+
 end
